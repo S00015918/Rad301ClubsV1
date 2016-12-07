@@ -188,17 +188,14 @@
     <Compile Include="Controllers\ClubsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610140858538_Initial.cs" />
-    <Compile Include="Migrations\201610140858538_Initial.Designer.cs">
-      <DependentUpon>201610140858538_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610140925438_studentID.cs" />
-    <Compile Include="Migrations\201610140925438_studentID.Designer.cs">
-      <DependentUpon>201610140925438_studentID.cs</DependentUpon>
+    <Compile Include="Migrations\201611160954237_Initial.cs" />
+    <Compile Include="Migrations\201611160954237_Initial.Designer.cs">
+      <DependentUpon>201611160954237_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClubModelMigrations\201611011805192_Initial.cs" />
     <Compile Include="Migrations\ClubModelMigrations\201611011805192_Initial.Designer.cs">
@@ -228,6 +225,9 @@
     <Content Include="Migrations\MigrationCmds.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EmbeddedResource Include="Migrations\201611160954237_Initial.resx">
+      <DependentUpon>201611160954237_Initial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ClubModelMigrations\TestStudents.csv" />
     <None Include="Properties\PublishProfiles\pprad301ClubsApp - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\pprad301ClubsApp - Web Deploy.pubxml" />
@@ -289,6 +289,11 @@
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -302,12 +307,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610140858538_Initial.resx">
-      <DependentUpon>201610140858538_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610140925438_studentID.resx">
-      <DependentUpon>201610140925438_studentID.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ClubModelMigrations\201611011805192_Initial.resx">
       <DependentUpon>201611011805192_Initial.cs</DependentUpon>
     </EmbeddedResource>

@@ -11,15 +11,18 @@ using Rad301ClubsV1.Models.ClubModel;
 
 namespace Rad301ClubsV1.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, ClubAdmin")]
     public class StudentsController : Controller
     {
         private ClubContext db = new ClubContext();
 
         // GET: Students
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string StudentID = null)
         {
-            return View(await db.Students.ToListAsync());
+            return View(await db.Students
+            .Where(c => StudentID == null || c.StudentID.StartsWith(StudentID))
+                .ToListAsync()
+                );
         }
 
         // GET: Students/Details/5
@@ -38,6 +41,7 @@ namespace Rad301ClubsV1.Controllers
         }
 
         // GET: Students/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -107,6 +111,8 @@ namespace Rad301ClubsV1.Controllers
         }
 
         // POST: Students/Delete/5
+
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(string id)
